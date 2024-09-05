@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -35,7 +35,6 @@ public class PlayerMove : MonoBehaviour
         else
         {
             _wasd = context.ReadValue<Vector2>();
-            Debug.Log(_wasd.sqrMagnitude);
             transform.forward = new Vector3(_wasd.x, 0, 0);
         }
     }
@@ -57,6 +56,5 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         _rb.velocity = new Vector3(_wasd.x * _moveSpeed ,_rb.velocity.y ,0);
-        
     }
 }
